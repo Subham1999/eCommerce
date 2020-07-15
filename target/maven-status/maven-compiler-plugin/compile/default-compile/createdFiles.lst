@@ -1,0 +1,10 @@
+eCommerce\service\Signup.class
+user\Admin.class
+user\UserDAO.class
+products_and_goods\Product.class
+user\Customer.class
+products_and_goods\ProductType.class
+sessionmanagement\SessionHandler.class
+eCommerce\service\TestService.class
+user\User.class
+eCommerce\service\Login.class

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>sign up</title>
+    <script type="text/javascript">
+      function check(){
+        var p1 = document.getElementById("pass1");
+        var p2 = document.getElementById("pass2");
+        if(p1 != p2){
+          alert("Password mismatch!");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form class="" action="signup" method="post">
+      User id : <input type="text" name="user_name" value="" required placeholder="user name">
+      <br><br>
+      User firstname : <input type="text" name="firstname" value="" required placeholder="first name">
+      <br><br>
+      User lastname : <input type="text" name="lastname" value="" required placeholder="lastname">
+      <br><br>
+      User mail : <input type="text" name="mail" value="" required placeholder="mail">
+      <br><br>
+      Password : <input type="password" name="user_password" value="" required placeholder="password">
+      <br><br>
+      Confirm password : <input type="password" id="pass2"name="user_password" value="" required placeholder="password">
+      <br><br>
+      User status : <input type="text" name="user_status" value="" required placeholder="admin/customer">
+      <br>
+      <button type="submit" name="submit" oninput=check()>sign up</button>
+    </form>
+  </body>
+</html>
