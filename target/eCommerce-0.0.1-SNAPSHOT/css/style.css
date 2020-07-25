@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+
+.custom-bg{
+	background-color: #408f6e!important;
+}
+
+.body{
+	background-color: white;
+}
+
+.nav-bar-edit{
+	text-color: white;
+}
+
+.admin .card{
+	background-color: #5f9ea0!important;
+}
+
+.admin .card:hover{
+	background-color: #dbe9f4!important;
+	cursor: pointer;
+}

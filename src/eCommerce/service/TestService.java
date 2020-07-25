@@ -1,6 +1,8 @@
 package eCommerce.service;
 
+import java.io.File;
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,14 +24,11 @@ public class TestService extends HttpServlet {
         super();
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Serving request. No problem!! ");
+//		response.getWriter().append(System.getProperty("catalina.base"));
+//		ServletContext context = getServletContext();
+		response.getWriter().append(getServletContext().getRealPath(File.separator) + File.separator + "img");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		/*
-		 * User user = new User(); user.setName("sub_sa"); user.setPassword("abcd"); new
-		 * UserDAO().storeUser(user);
-		 */
 		doGet(request, response);
 	}
 }

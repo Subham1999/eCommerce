@@ -8,15 +8,13 @@ package products_and_goods;
  *   LAPTOP
 */
 final class BuildProduct {
-	public static final Product buildProduct(int type, double price, String description) {
+	public static final Product buildProduct(String name, String type, double price, String description, String picture) {
 		ProductType productType = null;
-		if(type == 0) {
+		if(type.equalsIgnoreCase("phone")) {
 			productType = ProductType.PHONE;
-		} else if(type == 1) {
+		} else if(type.equalsIgnoreCase("computer")) {
 			productType = ProductType.COMPUTER;
-		} else if(type == 2) {
-			productType = ProductType.WASHINGMACHINE;
-		} else if(type == 3) {
+		} else {
 			productType = ProductType.LAPTOP;
 		}
 		
@@ -24,7 +22,8 @@ final class BuildProduct {
 		product.setDescription(description);
 		product.setPrice(price);
 		product.setProductType(productType);
-		
+		product.setName(name);
+		product.setPicture(picture);
 		return product;
 	}
 }

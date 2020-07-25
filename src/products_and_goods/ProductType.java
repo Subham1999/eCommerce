@@ -1,6 +1,6 @@
 package products_and_goods;
 
-enum ProductType {
+public enum ProductType {
 	PHONE,
 	COMPUTER,
 	WASHINGMACHINE,

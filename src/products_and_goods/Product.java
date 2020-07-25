@@ -8,12 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "product")
+@Table(name = "product_table")
 public final class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private long productID;
+	
+	@Column(name = "name")
+	private String name;
 	
 	@Column(name = "type")
 	private ProductType productType;
@@ -22,8 +25,18 @@ public final class Product {
 	private double price;
 	
 	@Column(name = "description")
-	private String description; 
+	private String description;
 	
+	@Column(name = "picture")
+	private String picture;
+	
+	
+	public String getPicture() {
+		return picture;
+	}
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
 	public String getDescription() {
 		return description;
 	}
@@ -48,7 +61,13 @@ public final class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
+
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	@Override
 	public String toString() {
 		return "{ " + "type of product = " + productType + ", price = Rs. " + price + "/--, Description = " + description + "}";
