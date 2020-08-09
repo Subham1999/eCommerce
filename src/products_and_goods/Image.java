@@ -1,4 +1,4 @@
-package products_and_goods;
+ package products_and_goods;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,6 +20,7 @@ public class Image {
 	
 	@Column(name = "product_id")
 	private String product_id;
+	
 	
 	public long getId() {
 		return id;

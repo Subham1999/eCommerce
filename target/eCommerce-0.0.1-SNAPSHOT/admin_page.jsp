@@ -4,9 +4,23 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<title>admin page</title>
+
+<%String status = (String)session.getAttribute("user_status");%>
+<%
+if(status == null){
+	session.setAttribute("message", "Access denied");
+	response.sendRedirect("error.jsp");
+	return;
+} else if(status.equals("not_admin")){
+	session.setAttribute("message", "You're not an authorized admin");
+	response.sendRedirect("error.jsp");
+	return;
+}
+%>
 
 <%@include file = "common_css_js.jsp" %>
-<title>admin page</title>
+
 </head>
 <body class="container admin">
 	<%@ include file = "components/navbar.jsp" %>
@@ -40,7 +54,7 @@
 	<!-- Button trigger modal -->
 	
 	<!-- Modal -->
-	<div class="modal fade" id="add-product" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="add-product" tabindex="-1" role="dialog" aria-labelledby="addProductModal" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header bg-success">
@@ -50,7 +64,7 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	      	<form action="add-product" method="post">
+	      	<form action="add-product" enctype="multipart/form-data" method="post">
 			  <div class="form-group">
 			    <label for="product_name">product name</label>
 			    <input type="text" class="form-control" id="product_name" name="product_name" placeholder="name of the product" required>

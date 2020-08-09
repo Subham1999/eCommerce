@@ -26,7 +26,7 @@ public class Login extends HttpServlet {
 			 		response.sendRedirect("error.jsp");
 			 	} else {
 			 		request.getSession().setAttribute("user_name", user.getName());
-			 		request.getSession().setAttribute("user_password", user.getPassword());
+//			 		request.getSession().setAttribute("user_password", user.getPassword());
 			 		request.getSession().setAttribute("user_status", user.getStatus());
 			 		response.sendRedirect("index.jsp");
 			 	}

@@ -54,7 +54,7 @@ if(status == null){
 	<!-- Button trigger modal -->
 	
 	<!-- Modal -->
-	<div class="modal fade" id="add-product" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="add-product" tabindex="-1" role="dialog" aria-labelledby="addProductModal" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header bg-success">

@@ -8,7 +8,8 @@ package products_and_goods;
  *   LAPTOP
 */
 final class BuildProduct {
-	public static final Product buildProduct(String name, String type, double price, String description, String picture) {
+
+	public static final Product buildProduct(String name, String type, double price, String description, byte[] imageData) {
 		ProductType productType = null;
 		if(type.equalsIgnoreCase("phone")) {
 			productType = ProductType.PHONE;
@@ -23,7 +24,9 @@ final class BuildProduct {
 		product.setPrice(price);
 		product.setProductType(productType);
 		product.setName(name);
-		product.setPicture(picture);
+		product.setData(imageData);
 		return product;
 	}
+	
+	
 }

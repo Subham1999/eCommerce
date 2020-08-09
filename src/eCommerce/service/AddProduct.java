@@ -1,6 +1,5 @@
 package eCommerce.service;
 
-import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -28,8 +27,7 @@ public class AddProduct extends HttpServlet {
 				request.getParameter("product_name"), 
 				request.getParameter("product_type"), 
 				request.getParameter("product_price"),
-				request.getParameter("product_description"), 
-				getServletContext().getRealPath(File.separator) + File.separator + "img",
+				request.getParameter("product_description"),
 				request.getPart("product_picture")
 			);
 		response.sendRedirect("admin_page.jsp");

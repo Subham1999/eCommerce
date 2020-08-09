@@ -41,7 +41,6 @@ public class Signup extends HttpServlet {
 		if(UserDAO.getUser(name, password) == null) {
 			if(storeUser(name, password)) {
 				request.getSession().setAttribute("user_name", name);
-				request.getSession().setAttribute("user_name", password);
 				request.getSession().setAttribute("user_status", "not_admin");
 				response.sendRedirect("index.jsp");
 			} else {

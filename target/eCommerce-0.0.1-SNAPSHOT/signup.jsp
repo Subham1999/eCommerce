@@ -14,7 +14,7 @@
 		 		<div class="card">
 		 			<div class="card-body">
 					 	<form action="Signup" method="post">
-					 	 <h4 class="text-center"><b>Log in here</b></h4>
+					 	 <h4 class="text-center"><b>Signup here</b></h4>
 						 <div class="form-group">
 						   <label for="user_name">user name</label>
 						   <input type="text" class="form-control" id="user_name" name="user_name" required placeholder="your user name">

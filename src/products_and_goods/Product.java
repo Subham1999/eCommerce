@@ -1,11 +1,15 @@
 package products_and_goods;
 
+import java.util.Base64;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "product_table")
@@ -27,16 +31,17 @@ public final class Product {
 	@Column(name = "description")
 	private String description;
 	
-	@Column(name = "picture")
-	private String picture;
+	@Lob
+	@Column(name = "data")
+	private byte[] data;
 	
-	
-	public String getPicture() {
-		return picture;
+	public byte[] getData() {
+		return data;
 	}
-	public void setPicture(String picture) {
-		this.picture = picture;
+	public void setData(byte[] data) {
+		this.data = data;
 	}
+
 	public String getDescription() {
 		return description;
 	}
@@ -71,5 +76,10 @@ public final class Product {
 	@Override
 	public String toString() {
 		return "{ " + "type of product = " + productType + ", price = Rs. " + price + "/--, Description = " + description + "}";
+	}
+	
+	@Transient
+	public String base64image() {
+		return Base64.getEncoder().encodeToString(this.data);
 	}
 }

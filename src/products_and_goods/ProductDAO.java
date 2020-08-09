@@ -1,7 +1,5 @@
 package products_and_goods;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.List;
 
@@ -15,21 +13,18 @@ import org.hibernate.Transaction;
 import sessionmanagement.SessionHandler;
 
 public class ProductDAO {
-	public static void storeProduct(String name, String type, String price, String description, String path, Part raw_image) {
+	public static void storeProduct(String name, String type, String price, String description, Part raw_image) {
 		Session session = SessionHandler.getSessionHandler().getSession();
 		Transaction transaction = session.beginTransaction();	
 		try {
-			Product product = BuildProduct.buildProduct(name, type, 
-					Double.parseDouble(price), description, 
-					raw_image.getSubmittedFileName());
-			session.persist(product);
-			FileOutputStream fileOut = new FileOutputStream(path + File.separator + raw_image.getSubmittedFileName());
+			
 			InputStream ios = raw_image.getInputStream();
-			byte input[] = new byte[ios.available()];
-			ios.read(input);
-			fileOut.write(input);
-			System.out.println(path + File.separator + raw_image.getSubmittedFileName());
-			fileOut.close();
+			byte imageData[] = new byte[ios.available()];
+			ios.read(imageData);
+			
+			Product product = BuildProduct.buildProduct(name, type, Double.parseDouble(price), description, imageData);
+			session.persist(product);
+
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally {
