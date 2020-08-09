@@ -45,7 +45,6 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="admin_page.jsp">admin page</a>
-          <a class="dropdown-item" href="computer.jsp"></a>
         </div>
       </li>
     <%}%>
@@ -61,8 +60,6 @@
     	<%
     		}
     	%>
-    	
-    	
     	<li class="nav-item">
     		<form action="Logout" method = "post">
     		<button type="submit" class="btn btn-outline-warning">log out</button>

@@ -1,5 +1,7 @@
 package user;
 
+import java.util.List;
+
 /*
  * @author Subham Santra
  * clean code
@@ -61,6 +63,22 @@ public class UserDAO {
 		}
 		SessionHandler.getSessionHandler().closeSession(session);
 		return user;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static List<User> getUserList(){
+		List<User> list = null;
+		Session session = SessionHandler.getSessionHandler().getSession();
+		try{
+			String hql = "from User";
+			Query query = session.createQuery(hql);
+			list = (List<User>)query.getResultList();
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			SessionHandler.getSessionHandler().closeSession(session);
+		}
+		return list;
 	}
 	
 }
