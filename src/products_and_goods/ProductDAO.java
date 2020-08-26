@@ -67,4 +67,27 @@ public class ProductDAO {
 		SessionHandler.getSessionHandler().closeSession(session);
 		return list;
 	}
+	
+	public static List<Product> getComputer(){
+		Session session = SessionHandler.getSessionHandler().getSession();
+		String hql = "from Product where type = :type";
+		Query query = session.createQuery(hql);
+		query.setParameter("type", 1);
+		@SuppressWarnings("unchecked")
+		List<Product> list = (List<Product>)query.getResultList();
+		System.out.println("returned " + list.size());
+		SessionHandler.getSessionHandler().closeSession(session);
+		return list;
+	}
+	
+	public static List<Product> getProducts(){
+		Session session = SessionHandler.getSessionHandler().getSession();
+		String hql = "from Product";
+		Query query = session.createQuery(hql);
+		@SuppressWarnings("unchecked")
+		List<Product> list = (List<Product>)query.getResultList();
+		System.out.println("returned " + list.size());
+		SessionHandler.getSessionHandler().closeSession(session);
+		return list;
+	}
 }

@@ -10,5 +10,6 @@
 </head>
 <body class="container">
 	<%@ include file = "components/navbar.jsp" %>
+	<%@ include file = "components/cart_modal.jsp" %>
 </body>
 </html>

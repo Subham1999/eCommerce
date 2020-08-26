@@ -21,7 +21,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="laptop.jsp">Laptop</a>
           <a class="dropdown-item" href="computer.jsp">Computer</a>
-          <a class="dropdown-item" href="phones.jsp">Phone</a>
+          <a class="dropdown-item" href="phone.jsp">Phone</a>
         </div>
       </li>
     </ul>
@@ -55,7 +55,7 @@
     		if(nav_status.equals("not_admin")){
     	%>
     		<li class="nav-item">
-   				<button class="btn nav-link" id="cart"></button>
+   				<button class="btn nav-link" id="cart" onclick="show_cart_list_in_modal_body()" data-toggle="modal" data-target="#cart-modal"></button>
     	    </li>
     	<%
     		}

@@ -21,7 +21,7 @@ if(status == null){
 </head>
 <body class="container">
 	<%@ include file = "components/navbar.jsp" %>
-	
+	<%@ include file = "components/cart_modal.jsp" %>
 	<%
 	final List<Product> list = ProductDAO.getLaptop();
 	if(list == null){
